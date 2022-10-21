@@ -1,4 +1,3 @@
-				
 
 (function($) {
 
@@ -113,7 +112,7 @@
 					// Lock.
 						locked = true;
 
-				// Article already visible? Just swap articles.
+				
 					if ($body.hasClass('is-article-visible')) {
 
 						// Deactivate current article.
@@ -304,6 +303,7 @@
 
 			});
 
+
 		// Events.
 			$body.on('click', function(event) {
 
@@ -360,6 +360,26 @@
 					}
 
 			});
+	
+	// Articles.
+			$main_articles.each(function() {
+
+				var $this = $(this);
+
+				// Close.
+					$('<div class="close">Close</div>')
+						.appendTo($this)
+						.on('click', function() {
+							location.hash = '';
+						});
+
+				// Prevent clicks from inside article from bubbling.
+					$this.on('click', function(event) {
+						event.stopPropagation();
+					});
+
+			});
+
 
 		// Scroll restoration.
 		// This prevents the page from scrolling back to the top on a hashchange.
