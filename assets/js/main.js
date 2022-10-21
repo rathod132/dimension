@@ -1,5 +1,4 @@
 
-
 (function($) {
 
 	var	$window = $(window),
@@ -76,7 +75,6 @@
 
 				// Handle lock.
 
-					// Already locked? Speed through "show" steps w/o delays.
 						if (locked || (typeof initial != 'undefined' && initial === true)) {
 
 							// Mark as switching.
@@ -170,7 +168,7 @@
 									$main.show();
 									$article.show();
 
-								// Activate article.
+								/ Activate article.
 									setTimeout(function() {
 
 										$article.addClass('active');
@@ -208,7 +206,6 @@
 
 				// Handle lock.
 
-					// Already locked? Speed through "hide" steps w/o delays.
 						if (locked) {
 
 							// Mark as switching.
@@ -282,7 +279,31 @@
 
 			};
 
-		
+		// Articles.
+			$main_articles.each(function() {
+
+				var $this = $(this);
+				
+				// Activate article.
+					setTimeout(function() {
+
+					  $article.addClass('active');
+
+				// Close.
+					$('<div class="close">Close</div>')
+						.appendTo($this)
+						.on('click', function() {
+							location.hash = '';
+						});
+
+				// Prevent clicks from inside article from bubbling.
+					$this.on('click', function(event) {
+						event.stopPropagation();
+					});
+
+			});
+
+
 		// Events.
 			$body.on('click', function(event) {
 
