@@ -1,8 +1,4 @@
-/*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+				
 
 (function($) {
 
@@ -80,7 +76,6 @@
 
 				// Handle lock.
 
-					// Already locked? Speed through "show" steps w/o delays.
 						if (locked || (typeof initial != 'undefined' && initial === true)) {
 
 							// Mark as switching.
@@ -174,7 +169,7 @@
 									$main.show();
 									$article.show();
 
-								// Activate article.
+								/ Activate article.
 									setTimeout(function() {
 
 										$article.addClass('active');
@@ -212,7 +207,6 @@
 
 				// Handle lock.
 
-					// Already locked? Speed through "hide" steps w/o delays.
 						if (locked) {
 
 							// Mark as switching.
@@ -290,6 +284,11 @@
 			$main_articles.each(function() {
 
 				var $this = $(this);
+				
+				// Activate article.
+					setTimeout(function() {
+
+					  $article.addClass('active');
 
 				// Close.
 					$('<div class="close">Close</div>')
