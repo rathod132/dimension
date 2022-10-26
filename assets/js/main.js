@@ -242,7 +242,17 @@
 
 					// Lock.
 						locked = true;
+					setTimeout(function() {
 
+								// Hide header, footer.
+									$header.hide();
+									$footer.hide();
+
+								// Show main, article.
+									$main.show();
+									$article.show();
+
+								/ Activate article.
 				// Deactivate article.
 					$article.removeClass('active');
 
